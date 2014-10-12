@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuges]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\author{Dmitry Rocha}
+\title{Limites e Derivadas - Cálculo I}
+
+\newcommand{\sen}{{\rm sen}}
+
+\newcommand{\limit}[3]{{
+  \underset{#1 \rightarrow #2}{\lim} #3
+}}
+
+% From: http://www.wikihow.com/Write-a-Resume-in-LaTeX .
+\topmargin=0in %length of margin at the top of the page (1 inch added by default)
+\oddsidemargin=0in %length of margin on sides for odd pages
+\evensidemargin=0in %length of margin on sides for even pages
+\textwidth=6.5in %How wide you want your text to be
+\marginparwidth=0.5in
+\headheight=0pt %1in margins at top and bottom (1 inch is added to this value by default)
+\headsep=0pt %Increase to increase white space in between headers and the top of the page
+\textheight=9in %How tall the text body is allowed to be on each page
+
+\begin{document}
+
+\section{Função contínua}
+
+\begin{description}
+  \item[f contínua em p] $\leftrightarrow$
+  $\underset{x\rightarrow p}{\lim } f(x) = f(p)$
+
+  \item[f contínua em p]
+
+$
+\leftrightarrow
+  \begin{cases}
+    \forall \varepsilon > 0, \exists \delta > 0 (\delta\text{ dependendo de }
+    \varepsilon\text{), tal que para todo }x \in D_f, \\
+    |x-p| < \delta \to |f(x) - f(p)| < \varepsilon
+  \end{cases}
+$
+
+\end{description}
+
+\section{Limite}
+
+$
+\limit{x}{p}{f(x)} = L \leftrightarrow
+  \begin{cases}
+    \forall \varepsilon > 0 , \exists \delta > 0\text{ tal que, }\forall x \in D_f, \\
+    0< |x-p| < \delta \to |f(x) - L| < \varepsilon
+  \end{cases}
+$
+
+\section{Limites laterais}
+
+\begin{itemize}
+\item
+$
+\limit{x}{p+}{f(x)} = L \leftrightarrow
+  \begin{cases}
+    \forall \varepsilon > 0 , \exists \delta > 0\text{ tal que, } \\
+    p < x < p+\delta \to |f(x) - L| < \varepsilon
+  \end{cases}
+$
+
+\item
+$
+\limit{x}{p-}{f(x)} = L \leftrightarrow
+  \begin{cases}
+    \forall \varepsilon > 0 , \exists \delta > 0\text{ tal que, } \\
+    p - \delta < x < p \to |f(x) - L| < \varepsilon
+  \end{cases}
+$
+\end{itemize}
+
+\section{T. C.}
+
+Seja $f(x) \leq g(x) \leq h(x)$, para $x < |x-p|<r$:
+
+Se $\limit{x}{p}{(f)} = L = \limit{x}{p}{h(x)}$ então $\limit{x}{p}{g(x)} = l$.
+
+\section{Limite fundamental}
+
+$\limit{x}{0}{\frac{\sen{(x)}}{x}} = 1$
+
+\section{Infinito}
+
+\begin{description}
+  \item[$+\infty$]
+  $
+  \limit{x}{+\infty}{f(x)} = L \leftrightarrow
+    \begin{cases}
+      \forall \varepsilon > 0 , \exists \delta > 0\text{ com } \delta >a\text{,
+tal que} \\
+      x > \delta \to L - \varepsilon < f(x)<L+\varepsilon
+    \end{cases}
+  $
+
+  \item[$-\infty$]
+  $
+  \limit{x}{-\infty}{f(x)} = L \leftrightarrow
+    \begin{cases}
+      \forall \varepsilon > 0 , \exists \delta > 0\text{ com } -\delta<a\text{,
+tal que} \\
+      x < -\delta \to L - \varepsilon < f(x)<L+\varepsilon
+    \end{cases}
+  $
+
+  \item[(a)]
+  $
+  \limit{x}{+\infty}{f(x)} = +\infty \leftrightarrow
+    \begin{cases}
+      \forall \varepsilon > 0 , \exists \delta > 0\text{ com } \delta>a\text{,
+tal que} \\
+      x>\delta \to f(x) > \varepsilon
+    \end{cases}
+  $
+
+  \item[(b)]
+  $
+  \limit{x}{+\infty}{f(x)} = -\infty \leftrightarrow
+    \begin{cases}
+      \forall \varepsilon > 0 , \exists \delta > 0\text{ com } \delta>a\text{,
+tal que} \\
+      p<x<p+\delta \to f(x) > \varepsilon
+    \end{cases}
+  $
+\end{description}
+
+\section{Limite}
+
+$
+\limit{x}{\infty}{(1+\frac{1}{x})^x} = e
+$
+
+\end{document}
