@@ -7,10 +7,15 @@
 \usepackage{mathtools}
 \usepackage{amssymb}
 
+\usepackage{multicol} % split into columns
+
 \author{Dmitry Rocha}
 \title{Limites e Derivadas - Cálculo I}
 
 \newcommand{\sen}{{\rm sen}}
+\newcommand{\tg}{{\rm tg}}
+\newcommand{\cosec}{{\rm cosec}}
+\newcommand{\cotg}{{\rm cotg}}
 
 \newcommand{\limit}[3]{{
   \underset{#1 \rightarrow #2}{\lim} #3
@@ -28,36 +33,38 @@
 
 \begin{document}
 
-\section{Função contínua}
+\section{Limite}
+
+\subsection{Função contínua}
 
 \begin{description}
   \item[f contínua em p] $\leftrightarrow$
-  $\underset{x\rightarrow p}{\lim } f(x) = f(p)$
+    $\underset{x\rightarrow p}{\lim } f(x) = f(p)$
 
   \item[f contínua em p]
 
-$
-\leftrightarrow
-  \begin{cases}
-    \forall \varepsilon > 0, \exists \delta > 0 (\delta\text{ dependendo de }
-    \varepsilon\text{), tal que para todo }x \in D_f, \\
-    |x-p| < \delta \to |f(x) - f(p)| < \varepsilon
-  \end{cases}
-$
+    $
+    \leftrightarrow
+      \begin{cases}
+        \forall \varepsilon > 0, \exists \delta > 0 (\delta\text{ dependendo de }
+        \varepsilon\text{), tal que para todo }x \in D_f, \\
+        |x-p| < \delta \to |f(x) - f(p)| < \varepsilon
+      \end{cases}
+    $
 
 \end{description}
 
-\section{Limite}
+\subsection{Limite}
 
-$
+$$
 \limit{x}{p}{f(x)} = L \leftrightarrow
   \begin{cases}
     \forall \varepsilon > 0 , \exists \delta > 0\text{ tal que, }\forall x \in D_f, \\
     0< |x-p| < \delta \to |f(x) - L| < \varepsilon
   \end{cases}
-$
+$$
 
-\section{Limites laterais}
+\subsection{Limites laterais}
 
 \begin{itemize}
 \item
@@ -79,17 +86,17 @@ $
 $
 \end{itemize}
 
-\section{T. C.}
+\subsection{T. C.}
 
 Seja $f(x) \leq g(x) \leq h(x)$, para $x < |x-p|<r$:
 
-Se $\limit{x}{p}{(f)} = L = \limit{x}{p}{h(x)}$ então $\limit{x}{p}{g(x)} = l$.
+Se $\limit{x}{p}{(f)} = L = \limit{x}{p}{h(x)}$ então $\limit{x}{p}{g(x)} = L$.
 
-\section{Limite fundamental}
+\subsection{Limite fundamental}
 
-$\limit{x}{0}{\frac{\sen{(x)}}{x}} = 1$
+$$\limit{x}{0}{\frac{\sen{(x)}}{x}} = 1$$
 
-\section{Infinito}
+\subsection{Infinito}
 
 \begin{description}
   \item[$+\infty$]
@@ -133,10 +140,77 @@ tal que} \\
   $
 \end{description}
 
-\section{Limite}
+\subsection{Limite}
 
-$
+$$
 \limit{x}{\infty}{(1+\frac{1}{x})^x} = e
-$
+$$
+
+\section{Derivadas}
+
+$$
+f'(x) =
+  \limit{x}{p}{ \frac{f(x) - f(p)}{x-p} =
+  \limit{h}{0}{ \frac{f(p+h)- f(p)}{h} } }
+$$
+
+A reta da equação $$y-f(p)=f'(p)(x-p)$$ é por definição a reta tangente ao
+gráfico de $f$ no ponto $(p, f(p))$. Assim, a derivada de $f$ em $p$, é o
+coeficiente angular da reta tangente ao gráfico de $f$ no ponto de abscissa
+$p$.
+
+\subsection{Derivadas}
+
+\begin{description}
+  \begin{multicols}{2}
+    \item[ $f(x) = nx$ ]       $ \to f'(x) = n $
+    \item[ $f(x) = x^n$ ]      $ \to f'(x) = n\times x^{(x-1)}$
+    \item[ $f(x) = k$ ]        $ \to f'(x) = 0$
+    \item[ $f(x) = x^{-n}$ ]   $ \to f'(x) = -n\times x^{(-n-1)} $,
+      \footnote{$x\neq 0$}
+    \item[ $f(x) = x^{ \frac{1}{n} }$ ] $ \to f'(x) = \frac{1}{2} \times
+      x^{\frac{1}{2}-1}$
+      \footnote{$x>0$ se $n$ par e $x\neq 0$ se $n$ ímpar ($n\geq2$)}
+    \item[ $f(x) = e^x$ ]      $ \to f'(x) = e^x $
+    \item[ $f(x) = ln(x)$ ]    $ \to f'(x) = \frac{1}{x} $
+      \footnote{$x>0$}
+    \end{multicols}
+\end{description}
+
+\subsection{Derivadas de funções trigonométricas}
+
+\begin{itemize}
+  \begin{multicols}{3}
+    \item $ \sen{'(x)} = \cos{'(x)} $
+    \item $ \cos{'(x)} = -\sen{'(x)} $
+    \item $ \tg{'(x)} = \sec{^2(x)} $
+    \item $ \sec{'(x)} = \sec{(x)}\tg{(x)}$
+    \item $ \cotg{'(x)} = -\cosec{^2(x)}$
+    \item $ \cosec{'(x)} = -\cosec{(x)}\times \cotg{(x)}$
+  \end{multicols}
+\end{itemize}
+
+\subsection{Regras de derivação}
+
+\begin{description}
+  \item[(D1)] $(f+g)'(p) = f'(p) + g'(p)$
+  \item[(D2)] $(kf)'(p) = k\times f'(p)$
+  \item[(D3)] $(f\times g)'(p) = f'(p)\times g(p) + f(p)\times g'(p)$
+  \item[(D4)] $( \frac{f(x)}{g(x)} )' = \frac{f'(x)\times g(x) - f(x)\times
+    g'(x)}{[g(x)]^2}$
+\end{description}
+
+\subsection{Notação de Leibniz}
+
+$$
+f'(x) = \frac{dy}{dx} = \limit{\Delta x}{0}{ \frac{f(x + \Delta x) -
+f(x)}{\Delta x} }
+$$
+
+Fazendo $\Delta y = f(x+ \Delta x)-f(x)$, resulta:
+
+$$
+\frac{dy}{dx} = \limit{\Delta x}{0}{ \frac{\Delta y}{\Delta x} }
+$$
 
 \end{document}
