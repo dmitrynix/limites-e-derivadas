@@ -149,9 +149,9 @@ $$
 \section{Derivadas}
 
 $$
-f'(x) =
-  \limit{x}{p}{ \frac{f(x) - f(p)}{x-p} =
-  \limit{h}{0}{ \frac{f(p+h)- f(p)}{h} } }
+f'(x) = \limit{x}{p}{ \frac{f(x) - f(p)}{x-p} =
+  \limit{h}{0}{ \frac{f(p+h)- f(p)}{h} } } =
+  [\frac{df}{dx}]_{x = x_0}
 $$
 
 A reta da equação $$y-f(p)=f'(p)(x-p)$$ é por definição a reta tangente ao
@@ -169,10 +169,10 @@ $p$.
     \item[ $f(x) = x^{-n}$ ]   $ \to f'(x) = -n\times x^{(-n-1)} $,
       \footnote{$x\neq 0$}
     \item[ $f(x) = x^{ \frac{1}{n} }$ ] $ \to f'(x) = \frac{1}{2} \times
-      x^{\frac{1}{2}-1}$
+      x^{\frac{1}{2}-1}$,
       \footnote{$x>0$ se $n$ par e $x\neq 0$ se $n$ ímpar ($n\geq2$)}
     \item[ $f(x) = e^x$ ]      $ \to f'(x) = e^x $
-    \item[ $f(x) = ln(x)$ ]    $ \to f'(x) = \frac{1}{x} $
+    \item[ $f(x) = ln(x)$ ]    $ \to f'(x) = \frac{1}{x}$,
       \footnote{$x>0$}
     \end{multicols}
 \end{description}
@@ -180,7 +180,7 @@ $p$.
 \subsection{Derivadas de funções trigonométricas}
 
 \begin{itemize}
-  \begin{multicols}{3}
+  \begin{multicols}{2}
     \item $ \sen{'(x)} = \cos{'(x)} $
     \item $ \cos{'(x)} = -\sen{'(x)} $
     \item $ \tg{'(x)} = \sec{^2(x)} $
@@ -200,17 +200,17 @@ $p$.
     g'(x)}{[g(x)]^2}$
 \end{description}
 
-\subsection{Notação de Leibniz}
+% \subsection{Notação de Leibniz}
 
-$$
-f'(x) = \frac{dy}{dx} = \limit{\Delta x}{0}{ \frac{f(x + \Delta x) -
-f(x)}{\Delta x} }
-$$
+% $$
+% f'(x) = \frac{dy}{dx} = \limit{\Delta x}{0}{ \frac{f(x + \Delta x) -
+% f(x)}{\Delta x} }
+% $$
 
-Fazendo $\Delta y = f(x+ \Delta x)-f(x)$, resulta:
+% Fazendo $\Delta y = f(x+ \Delta x)-f(x)$, resulta:
 
-$$
-\frac{dy}{dx} = \limit{\Delta x}{0}{ \frac{\Delta y}{\Delta x} }
-$$
+% $$
+% \frac{dy}{dx} = \limit{\Delta x}{0}{ \frac{\Delta y}{\Delta x} }
+% $$
 
 \end{document}
